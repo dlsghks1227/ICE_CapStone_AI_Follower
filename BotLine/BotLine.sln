@@ -3,23 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotLine", "BotLine\BotLine.csproj", "{AA3E49F6-770E-49B2-AB56-91EA66B2D928}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BotLine", "BotLine\BotLine.vcxproj", "{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA3E49F6-770E-49B2-AB56-91EA66B2D928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA3E49F6-770E-49B2-AB56-91EA66B2D928}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA3E49F6-770E-49B2-AB56-91EA66B2D928}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA3E49F6-770E-49B2-AB56-91EA66B2D928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Debug|x64.ActiveCfg = Debug|x64
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Debug|x64.Build.0 = Debug|x64
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Debug|x86.ActiveCfg = Debug|Win32
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Debug|x86.Build.0 = Debug|Win32
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Release|x64.ActiveCfg = Release|x64
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Release|x64.Build.0 = Release|x64
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Release|x86.ActiveCfg = Release|Win32
+		{FC580BC5-8082-44EE-BEF8-BF632B3A6E4F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8A31CAF5-E80E-4C38-BF78-D48EA3F50722}
+		SolutionGuid = {52422B20-C5AE-4DB2-A7B2-8E73A7DD8EFF}
 	EndGlobalSection
 EndGlobal
