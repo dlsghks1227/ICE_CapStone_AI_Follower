@@ -16,5 +16,12 @@
 
 #include <memory>
 #include <string>
+#include <sstream>
+#include <vector>
+#include <chrono>
+#include <algorithm>
+
+#include <thread>
+#include <mutex>
 
 #pragma comment (lib, "ws2_32.lib")

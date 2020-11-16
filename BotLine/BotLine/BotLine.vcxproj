@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CMessage.cpp" />
     <ClCompile Include="CServerManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CMessage.h" />
     <ClInclude Include="CServerManager.h" />
     <ClInclude Include="Header.h" />
   </ItemGroup>
