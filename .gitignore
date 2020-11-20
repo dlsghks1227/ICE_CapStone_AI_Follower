@@ -1,3 +1,12 @@
+# 이미지
+*.jpg
+
+# 모델
+*.pth
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
