@@ -14,8 +14,9 @@ from utils.general import check_img_size, check_requirements, check_imshow, non_
 from utils.plots import plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
-from math import ceil, sqrt
+from math import ceil, sqrt, atan2
 import socket
+from threading import Thread
 ADDRESS = "192.168.0.9"
 PORT = 6215
 
@@ -125,20 +126,24 @@ def detect(opt):
 
                     w, h = (right - left), (bottom - top)
                     c1, c2 = left + (w / 2), top + (h / 2)
-                    distance = sqrt(((windowWidth / 2) - c1) ** 2 + ((windowHeight / 2) - c2) ** 2)
-                    speedX = round((distance / (windowWidth / 2)), 2)
-                    speedY = round((distance / (windowHeight / 2)), 2)
+                    wcx, wcy = (windowWidth / 2), windowHeight
+                    radian = atan2((c2 - wcy), (c1 - wcx))
+                    degree = (((radian * 180.0 / 3.14) + 90.0) / 90.0)
+                    distance = sqrt((wcx - c1) ** 2 + (wcy - c2) ** 2)
                     emptyArea = ((windowArea - (w * h)) / windowArea) * 100.0
                     if emptyArea >= 80.0:
-                        if (windowWidth / 2) - c1 > 300.0:
-                            tempControl = f"left|{speedX}|{speedY}"
-                        elif (windowWidth / 2) - c1 < -300.0:
-                            tempControl = f"right|{speedX}|{speedY}"
+                        if (windowHeight / 2) - c2 > 0.0:
+                            if degree > 0.0:        # right
+                                leftWheelSpeed = round(degree, 3)
+                                rightWheelSpeed = round(1.0 - degree, 3)
+                                tempControl = f"front|{leftWheelSpeed}|{rightWheelSpeed}"
+                            else:                   # left
+                                degree = abs(degree)
+                                leftWheelSpeed = round(degree, 3)
+                                rightWheelSpeed = round(1.0 - degree, 3)
+                                tempControl = f"front|{leftWheelSpeed}|{rightWheelSpeed}"
                         else:
-                            if (windowHeight / 2) - c2 > 0.0:
-                                tempControl = f"front|{speedX}|{speedY}"
-                            else:
-                                tempControl = f"none|0.0|0.0"
+                            tempControl = f"none|0.0|0.0"
                     else:
                         tempControl = f"none|0.0|0.0"
                     # print((im0.shape[1] / 2) - c1, (im0.shape[0] / 2) - c2)
